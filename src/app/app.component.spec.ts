@@ -20,16 +20,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'personalize'`, () => {
+  it(`should have as title 'viewmaestro'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('personalize');
+    expect(app.title).toEqual('viewmaestro');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('personalize app is running!');
+    expect(compiled.querySelector('.content span').textContent).toContain('viewmaestro app is running!');
   });
 });

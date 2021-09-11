@@ -1,0 +1,22 @@
+.smallFooter {
+    background: #93D9A3;
+    margin-left: -20px;
+    margin-right: -20px;
+  }
+
+  .smallFootSec {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    padding-left: 30px;
+    overflow: hidden;
+    margin: auto;
+  }
+
+  .smallFootSec>li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
+  }

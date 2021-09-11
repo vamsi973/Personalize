@@ -1,0 +1,115 @@
+<h1 mat-dialog-title>Create Report</h1>
+<div mat-dialog-content>
+    <form [formGroup]="reportCreate" (ngSubmit)="createReportRecord()">
+        <div class="row">
+            <div class="col-sm-6">
+                <mat-form-field class="full-width">
+                    <mat-label>Title</mat-label>
+                    <input matInput formControlName="title" />
+                </mat-form-field>
+            </div>
+
+            <div class="col-sm-6">
+                <mat-form-field class="full-width">
+                    <mat-label>Amount</mat-label>
+                    <input type="number" matInput formControlName="amount" autocomplete="off" />
+                </mat-form-field>
+            </div>
+
+            <div class="col-sm-6">
+                <mat-form-field class="full-width">
+                    <mat-label>description</mat-label>
+                    <input matInput formControlName="description" />
+                </mat-form-field>
+            </div>
+
+            <div class="col-sm-6">
+                <mat-form-field class="full-width">
+                    <mat-label>tag</mat-label>
+                    <input matInput formControlName="tag" autocomplete="off" />
+                </mat-form-field>
+            </div>
+            <div class="col-sm-6">
+                <mat-form-field class="full-width">
+                    <mat-label>repayment</mat-label>
+                    <input type="date" matInput formControlName="repayment" autocomplete="off" />
+                </mat-form-field>
+            </div>
+            <div class="col-sm-6">
+                <mat-form-field>
+                    <mat-select placeholder="flow type" formControlName="flowType">
+                        <mat-option *ngFor="let item of flowType" [value]="item.name">
+                            {{item.name}}</mat-option>
+                    </mat-select>
+                    <mat-error align="start" *ngIf="reportCreate?.get('flowType').hasError('required')"
+                        class="form__error">
+                        field is required</mat-error>
+                </mat-form-field>
+            </div>
+            <!-- <div class="col-sm-6">
+                <mat-form-field class="full-width">
+                    <mat-label>Contact Number</mat-label>
+                    <input matInput OnlyNumberwithoutdot formControlName="contactNumber" autocomplete="off" />
+                </mat-form-field>
+            </div> -->
+            <!-- 
+            <div class="col-sm-6">
+                <mat-form-field class="full-width">
+                    <mat-label>Device Type</mat-label>
+                    <select matNativeControl required formControlName="deviceType">
+                        <option value="linux">Linux</option>
+                        <option value="false">Android</option>
+            </select>
+            </mat-form-field>
+        </div>
+
+        <div class="col-sm-6">
+            <mat-form-field>
+                <mat-select placeholder="Select Country" (selectionChange)="fetchStates()" formControlName="country">
+                    <mat-option *ngFor="let country of countries" [value]="country.countryName">
+                        {{country.countryName}}</mat-option>
+                </mat-select>
+                <mat-error align="start" *ngIf="siteForm?.get('country').hasError('required')" class="form__error">
+                    Country is required</mat-error>
+            </mat-form-field>
+        </div>
+        <div class="col-sm-6">
+            <mat-form-field>
+                <mat-select placeholder="Select State" formControlName="state" (selectionChange)="fetchCities()">
+                    <mat-option *ngFor="let state of states" [value]="state">{{state}}</mat-option>
+                </mat-select>
+                <mat-error align="start" *ngIf="siteForm?.get('state').hasError('required')" class="form__error">
+                    State is required</mat-error>
+            </mat-form-field>
+        </div>
+        <div class="col-sm-6">
+            <mat-form-field>
+                <mat-select placeholder="Select City" formControlName="city">
+                    <mat-option *ngFor="let city of cities" [value]="city.name">{{city.name}}</mat-option>
+                </mat-select>
+                <mat-error align="start" *ngIf="siteForm?.get('city').hasError('required')" class="form__error">City
+                    is required</mat-error>
+            </mat-form-field>
+        </div>
+        <div class="col-sm-6">
+            <mat-form-field class="full-width">
+                <mat-label>Device Latitude</mat-label>
+                <input matInput formControlName="deviceLatitude" autocomplete="off" />
+            </mat-form-field>
+        </div>
+        <div class="col-sm-6">
+            <mat-form-field class="full-width">
+                <mat-label>Device Longitude</mat-label>
+                <input matInput formControlName="deviceLongitude" autocomplete="off" />
+            </mat-form-field>
+        </div> -->
+
+        </div>
+
+        <div class="dialog-actions" mat-dialog-actions>
+            <button mat-button (click)="onNoClick()" class="btn btn-outline-primary margin-right">Cancel</button>
+            <button type="submit" [disabled]="!reportCreate.valid" mat-button color="primary"
+                class='btn  btn-outline-primary active' cdkFocusInitial>Submit</button>
+        </div>
+    </form>
+</div>

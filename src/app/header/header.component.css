@@ -1,0 +1,25 @@
+.logo {
+  width: 140px;
+}
+
+.hamIcon {
+  height: 24px;
+  cursor: pointer;
+}
+
+ul li {
+  list-style: none;
+  background: padding-box !important;
+  border: none !important;
+}
+
+.bgRemove {
+  background: padding-box !important;
+  border: none !important;
+  z-index: 999;
+}
+
+.headerAlign {
+  align-items: center;
+  justify-content: space-between;
+}
